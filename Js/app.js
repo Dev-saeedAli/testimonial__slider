@@ -44,15 +44,15 @@ const slideImage = (element) =>{
         roleTwo.classList.remove("none")
     }
     if(element === 'next-btn' || element[0] === 'next-btn'){
-        nextButton.classList.add("active")
         prevButton.classList.remove("active")
-        userImageTwo.classList.add("hidden")
-        testimonialTextTwo.classList.add("none")
-        authorTwo.classList.add("none")
-        roleTwo.classList.add("none")
+        nextButton.classList.add("active")
         userImageOne.classList.remove("hidden")
         testimonialTextOne.classList.remove("none")
         authorOne.classList.remove("none")
         roleOne.classList.remove("none")
+        userImageTwo.classList.add("hidden")
+        testimonialTextTwo.classList.add("none")
+        authorTwo.classList.add("none")
+        roleTwo.classList.add("none")
     }
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Mohammed Said Ali">
+  <meta name="description" content="This is a front end mentor challenge of a slider made with html, css and javascript.">
+  <meta name="keywords" content="Html, css, javascript, sass">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">  
+  <link rel="stylesheet" href="./Sass/style.css">
+  <script src="./Js/app.js" defer></script>
+  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+</head>
+<body>
+
+  <div class="container">    
+      <h1 class="offset">Coding Bootcamp Testimonials</h1>
+    <main>
+      <section class="testimonial__section">
+        <h2 class="offset">Testimonial section</h2>
+        <!-- testimonial text -->
+        <div class="testimonial__text">
+          <div class="testimonial__text__pOne">
+            <p>“ I’ve been interested in coding for a while but never taken the jump, until now. 
+              I couldn’t recommend this course enough. I’m now in the job of my dreams and so 
+              excited about the future. ”
+            </p>
+            </div>
+          <div class="testimonial__text__pTwo none">
+            <p >“ If you want to lay the best foundation possible I’d recommend taking this course. 
+              The depth the instructors go into is incredible. I now feel so confident about 
+              starting up as a professional developer. ”
+            </p>
+            </div>
+            <div class="testimonial__text__authorOne">
+              <strong class="authorOne">Tanya Sinclair</strong>
+              <p class="roleOne">UX Engineer</p>
+            </div>
+            <div class="testimonial__text__authorTwo none">
+              <strong class="authorTwo none">John Tarkpor</strong>
+              <p class="roleTwo none">Junior Front-end Developer</p>
+            </div>
+          </div>
+          <!--x testimonial text x-->
+          
+          <!-- testimonial images -->
+          <div class="testimonial__image">
+            <figure class="figure">
+              <img class="userTwo" src="./images/image-tanya.jpg" alt="testimonial image">
+              <img class="userOne hidden" src="images/image-john.jpg" alt="testimonial image">
+              <figcaption>Testimonial user image</figcaption>
+            </figure>
+            <div class="btn">
+              <button class="prev-btn  btn-Main" aria-label="this button will go to the previous slide testimonial"><img src="./images/icon-prev.svg" alt="previous icon"></button>
+            <button class="next-btn btn-Main" aria-label="this button will go to the next slide testimonial"><img src="./images/icon-next.svg" alt="next"></button>
+            </div>
+          </div>
+          <!--x testimonial images x-->
+      </section>
+    </main>
+  </div>
+</body>
+</html>

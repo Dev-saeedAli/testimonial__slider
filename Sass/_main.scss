@@ -1,0 +1,207 @@
+@import "./base";
+@import "./responsive";
+@import "./color";
+
+body{
+    font-size: 2rem;
+    min-height: 100vh;
+    font-family: $FF;
+    overflow-x: hidden;
+}
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    z-index: -11;
+    background: url("../images/pattern-curve.svg") bottom left / contain no-repeat;
+    background-size: 40%;
+}
+.none{
+    display: none;
+}
+
+main{
+    .testimonial__section{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        margin: 50px 0px 10px;
+        @include mq(950px){
+            grid-template-columns: 1fr;
+            margin: 0;
+        }
+        
+        .testimonial__text{
+            grid-column: 1 / 3;
+            background: url("../images/pattern-quotes.svg") top left / contain  no-repeat;
+            z-index: 22;
+            background-size: 20% ;
+            background-position-x: 150px;
+            transform: translateX(20%);
+            padding: 10px 0 10px 30px;
+            @include mq(950px){
+                grid-column: auto;
+                order: 2;
+                text-align: center;
+                transform: translate(0);
+                padding: 10px 5px;
+                background-position: top center;
+                margin-top: 40px;
+            }
+            
+            .testimonial__text__pOne,
+            .testimonial__text__pTwo{
+                padding: 10px;
+                font-weight: 390;
+                color: $Dark-Blue;
+                font-size: 1.9rem;
+                line-height: 1.4;
+                text-align: left;
+                transition: all .3s ease;
+                animation: slideText .5s ease-in-out backwards;
+                @include mq(950px){
+                   text-align: center;
+                   font-size: 1.5rem;
+                }
+            }
+            .testimonial__text__authorOne,
+            .testimonial__text__authorTwo{
+                @include flexCenter;
+                justify-content: left;
+                gap: 20px;
+                margin: 20px 0px 10px;
+                transition: all .3s ease;
+                animation: slideText .6s ease-in-out backwards;
+                @include mq(950px){
+                    justify-content: center;
+                    flex-direction: column;
+                }
+                
+                .authorOne,
+                .authorTwo{
+                    transition: all .3s ease;
+                    animation: slideText .6s ease-in-out backwards;
+                    font-weight: $FW-BOLDER;
+                    font-size: 1.6rem;
+                }
+                .roleOne,
+                .roleTwo{
+                    transition: all .3s ease;
+                    animation: slideText .5s ease-in-out backwards;
+                    font-weight: $FW-LIGHT;
+                    color: $Grayish-Blue;
+                    font-size: 1.4rem;
+                }
+            }
+
+        }
+        .testimonial__image{
+            grid-column: 3 / 4;
+            position: relative;
+            z-index: 1;
+            background: url("../images/pattern-bg.svg") center / cover no-repeat;
+            text-align: center;
+            background-size: 100%;
+            padding: 50px;
+          
+            @include mq(950px){
+                grid-column: auto;
+                order: 1;
+                padding: 50px 0;
+            }
+            figure{
+                display: flex;
+                .userOne,
+                .userTwo{
+                    width: calc(100% - 10%);
+                    margin: auto;
+                    box-shadow: 3px 10px 20px rgba(33, 33, 33, 0.2);
+                    border-radius: 5px;
+                    object-fit: cover;
+                    max-width: 100%;
+                    animation: fadeImage .7s ease-in-out backwards;
+                    display: flex;
+                }
+
+                .userOne{
+                    &.hidden{
+                            display: none;
+                        }
+                }
+                .userTwo{
+                    &.hidden{
+                            display: none;
+                        }
+                }
+            }
+            
+           
+
+            .btn{
+                position: absolute;
+                bottom: 7%;
+                left: 20%;
+                background: $White;
+                border-radius: 50px;
+                width: 150px;
+                padding: 5px ;
+                box-shadow: 3px 5px 20px rgba(0,0,0,0.4);
+                @include flexCenter;
+                justify-content: space-around;
+                gap: 10px;
+                @include mq(950px){
+                    left: 50%;
+                    transform: translate(-50%, -7%);
+                }
+                @include mq(500px){
+                    max-width: 100px;
+                }
+                .prev-btn,
+               .next-btn{
+                    background: transparent;
+                    padding: 5px;
+                    width: 100%;
+                    border: none;
+                    cursor: pointer;
+                    &:hover{
+                        opacity: 0.6;
+                    }
+               }
+               .prev-btn{
+                &.active{
+                    border: 3px solid black;
+                    border-top-left-radius: 50px;
+                    border-bottom-left-radius: 50px;
+                }
+               }
+               .next-btn{
+                    &.active{
+                        border: 3px solid black;
+                        border-top-right-radius: 50px;
+                        border-bottom-right-radius: 50px;
+                    }
+               }
+           }
+        }
+    }
+}
+
+@keyframes slideText {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }to{
+        opacity: 1;
+        transform: translateX(0%);
+    }   
+}
+
+@keyframes fadeImage {
+    from{
+        opacity: 0;
+        
+    }to{
+    
+        opacity: 1;
+    }
+}
